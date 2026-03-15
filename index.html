@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rao Group Real Estate | Premium Properties & Investments</title>
+    <meta name="description" content="Rao Group Real Estate - Your trusted partner in luxury properties, commercial investments, and premium real estate solutions.">
+    <link rel="icon" type="image/png" href="rao_group_logo_shadow.png">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- Preloader -->
+    <div class="preloader" id="preloader">
+        <div class="preloader-inner">
+            <img src="rao_group_logo_shadow.png" alt="Rao Group" class="preloader-logo">
+            <div class="preloader-bar">
+                <div class="preloader-progress" id="preloader-progress"></div>
+            </div>
+            <span class="preloader-text" id="preloader-text">0%</span>
+        </div>
+    </div>
+
+    <!-- Floating Particles Canvas -->
+    <canvas id="particles-canvas"></canvas>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#home" class="nav-logo magnetic" data-strength="25">
+                <img src="rao_group_logo_shadow.png" alt="Rao Group Real Estate">
+            </a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link magnetic" data-strength="15">Home</a></li>
+                <li><a href="#about" class="nav-link magnetic" data-strength="15">About</a></li>
+                <li><a href="#services" class="nav-link magnetic" data-strength="15">Services</a></li>
+                <li><a href="#properties" class="nav-link magnetic" data-strength="15">Properties</a></li>
+                <li><a href="#testimonials" class="nav-link magnetic" data-strength="15">Testimonials</a></li>
+                <li><a href="#contact" class="nav-link nav-cta magnetic" data-strength="20">Contact Us</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg"></div>
+        <div class="hero-grid-overlay"></div>
+        <div class="hero-particles-css">
+            <div class="h-particle" style="--x:10%;--y:20%;--dur:8s;--del:0s;--sz:3px"></div>
+            <div class="h-particle" style="--x:25%;--y:65%;--dur:12s;--del:1s;--sz:2px"></div>
+            <div class="h-particle" style="--x:40%;--y:30%;--dur:10s;--del:2s;--sz:4px"></div>
+            <div class="h-particle" style="--x:55%;--y:75%;--dur:14s;--del:0.5s;--sz:2px"></div>
+            <div class="h-particle" style="--x:70%;--y:15%;--dur:9s;--del:3s;--sz:3px"></div>
+            <div class="h-particle" style="--x:80%;--y:55%;--dur:11s;--del:1.5s;--sz:2px"></div>
+            <div class="h-particle" style="--x:90%;--y:40%;--dur:13s;--del:0.8s;--sz:3px"></div>
+        </div>
+        <div class="hero-content">
+            <img src="rao_group_logo_shadow.png" alt="Rao Group" class="hero-logo">
+            <h1>Elevating Real Estate<br>Excellence</h1>
+            <p>Premium properties, unparalleled service, and trusted investments for discerning clients.</p>
+            <div class="hero-buttons">
+                <a href="#properties" class="btn btn-primary magnetic" data-strength="30">
+                    <span>Explore Properties</span>
+                    <div class="btn-shimmer"></div>
+                </a>
+                <a href="#contact" class="btn btn-outline magnetic" data-strength="30">
+                    <span>Get In Touch</span>
+                </a>
+            </div>
+        </div>
+        <div class="hero-scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll</span>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar" id="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="500">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Properties Sold</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="15">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="200">0</span><span class="stat-suffix">+</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="50">0</span><span class="stat-suffix">M+</span>
+                    <span class="stat-label">Portfolio Value</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="container">
+            <div class="section-header" data-animate="header">
+                <span class="section-tag">Who We Are</span>
+                <h2>About Rao Group</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="about-grid">
+                <div class="about-visual" data-animate="slide-right">
+                    <div class="about-image-box">
+                        <div class="about-icon-display">
+                            <i class="fas fa-city"></i>
+                        </div>
+                        <div class="about-image-border"></div>
+                    </div>
+                    <div class="floating-badge">
+                        <span class="badge-number">15+</span>
+                        <span class="badge-text">Years of Trust</span>
+                    </div>
+                </div>
+                <div class="about-content" data-animate="slide-left">
+                    <h3>Building Trust,<br>Delivering Excellence</h3>
+                    <p>Rao Group Real Estate is a premier real estate firm dedicated to providing exceptional property solutions. With over 15 years of industry experience, we have established ourselves as a trusted name in residential, commercial, and investment real estate.</p>
+                    <p>Our team of seasoned professionals combines deep market knowledge with personalized service to help you find the perfect property or maximize your investment returns.</p>
+                    <div class="about-features">
+                        <div class="about-feature" data-animate="stagger">
+                            <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                            <div>
+                                <h4>Trusted & Reliable</h4>
+                                <p>A legacy of trust built over 15+ years of excellence.</p>
+                            </div>
+                        </div>
+                        <div class="about-feature" data-animate="stagger">
+                            <div class="feature-icon"><i class="fas fa-handshake"></i></div>
+                            <div>
+                                <h4>Client-Centric</h4>
+                                <p>Your goals are our priority at every step.</p>
+                            </div>
+                        </div>
+                        <div class="about-feature" data-animate="stagger">
+                            <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                            <div>
+                                <h4>Market Expertise</h4>
+                                <p>Data-driven insights for smarter investments.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-header" data-animate="header">
+                <span class="section-tag">What We Offer</span>
+                <h2>Our Services</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="services-grid">
+                <div class="service-card tilt-card" data-animate="stagger-card">
+                    <div class="card-glow"></div>
+                    <div class="service-icon"><i class="fas fa-home"></i></div>
+                    <h3>Residential Sales</h3>
+                    <p>Find your dream home from our curated portfolio of premium residential properties, from luxury apartments to exclusive villas.</p>
+                </div>
+                <div class="service-card tilt-card" data-animate="stagger-card">
+                    <div class="card-glow"></div>
+                    <div class="service-icon"><i class="fas fa-building"></i></div>
+                    <h3>Commercial Real Estate</h3>
+                    <p>Strategic commercial spaces for businesses — office complexes, retail outlets, and industrial facilities in prime locations.</p>
+                </div>
+                <div class="service-card tilt-card" data-animate="stagger-card">
+                    <div class="card-glow"></div>
+                    <div class="service-icon"><i class="fas fa-key"></i></div>
+                    <h3>Property Management</h3>
+                    <p>Comprehensive property management services ensuring your assets are maintained, occupied, and generating optimal returns.</p>
+                </div>
+                <div class="service-card tilt-card" data-animate="stagger-card">
+                    <div class="card-glow"></div>
+                    <div class="service-icon"><i class="fas fa-coins"></i></div>
+                    <h3>Investment Advisory</h3>
+                    <p>Expert guidance on real estate investments with in-depth market analysis, risk assessment, and portfolio diversification strategies.</p>
+                </div>
+                <div class="service-card tilt-card" data-animate="stagger-card">
+                    <div class="card-glow"></div>
+                    <div class="service-icon"><i class="fas fa-drafting-compass"></i></div>
+                    <h3>Project Development</h3>
+                    <p>End-to-end project development from land acquisition and planning to construction management and delivery.</p>
+                </div>
+                <div class="service-card tilt-card" data-animate="stagger-card">
+                    <div class="card-glow"></div>
+                    <div class="service-icon"><i class="fas fa-file-contract"></i></div>
+                    <h3>Legal & Documentation</h3>
+                    <p>Seamless legal support for property transactions including title verification, documentation, and regulatory compliance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Properties Section -->
+    <section class="properties" id="properties">
+        <div class="container">
+            <div class="section-header" data-animate="header">
+                <span class="section-tag">Featured Listings</span>
+                <h2>Premium Properties</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="properties-grid">
+                <div class="property-card tilt-card" data-animate="stagger-card">
+                    <div class="property-image" style="background:linear-gradient(135deg,#1a1a2e,#16213e)">
+                        <div class="property-img-icon"><i class="fas fa-building"></i></div>
+                        <span class="property-badge">For Sale</span>
+                        <div class="property-hover-overlay">
+                            <a href="#contact" class="btn btn-primary btn-sm">View Details</a>
+                        </div>
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price">$1,250,000</div>
+                        <h3>Skyline Luxury Apartments</h3>
+                        <p class="property-location"><i class="fas fa-map-marker-alt"></i> Downtown Business District</p>
+                        <div class="property-meta">
+                            <span><i class="fas fa-bed"></i> 3 Beds</span>
+                            <span><i class="fas fa-bath"></i> 2 Baths</span>
+                            <span><i class="fas fa-ruler-combined"></i> 2,400 sqft</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="property-card tilt-card" data-animate="stagger-card">
+                    <div class="property-image" style="background:linear-gradient(135deg,#2d1b4e,#1a1a2e)">
+                        <div class="property-img-icon"><i class="fas fa-home"></i></div>
+                        <span class="property-badge">For Sale</span>
+                        <div class="property-hover-overlay">
+                            <a href="#contact" class="btn btn-primary btn-sm">View Details</a>
+                        </div>
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price">$2,800,000</div>
+                        <h3>Royal Garden Villa</h3>
+                        <p class="property-location"><i class="fas fa-map-marker-alt"></i> Premium Suburban Estate</p>
+                        <div class="property-meta">
+                            <span><i class="fas fa-bed"></i> 5 Beds</span>
+                            <span><i class="fas fa-bath"></i> 4 Baths</span>
+                            <span><i class="fas fa-ruler-combined"></i> 5,200 sqft</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="property-card tilt-card" data-animate="stagger-card">
+                    <div class="property-image" style="background:linear-gradient(135deg,#1a3c34,#1a1a2e)">
+                        <div class="property-img-icon"><i class="fas fa-store"></i></div>
+                        <span class="property-badge sale">For Lease</span>
+                        <div class="property-hover-overlay">
+                            <a href="#contact" class="btn btn-primary btn-sm">View Details</a>
+                        </div>
+                    </div>
+                    <div class="property-info">
+                        <div class="property-price">$18,000<span class="price-period">/mo</span></div>
+                        <h3>Prime Commercial Plaza</h3>
+                        <p class="property-location"><i class="fas fa-map-marker-alt"></i> Central Commercial Hub</p>
+                        <div class="property-meta">
+                            <span><i class="fas fa-expand-arrows-alt"></i> Open Plan</span>
+                            <span><i class="fas fa-parking"></i> 20 Spots</span>
+                            <span><i class="fas fa-ruler-combined"></i> 8,500 sqft</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-cta">
+                <a href="#contact" class="btn btn-outline magnetic" data-strength="20">
+                    <span>View All Properties</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <div class="section-header" data-animate="header">
+                <span class="section-tag">Client Stories</span>
+                <h2>What Our Clients Say</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card" data-animate="stagger-card">
+                    <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"Rao Group made our dream of owning a luxury home a reality. Their professionalism and attention to detail is unmatched."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">AM</div>
+                        <div><h4>Arun Mehta</h4><span>Homeowner</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-animate="stagger-card">
+                    <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"Exceptional investment advisory. The team helped us build a diversified real estate portfolio that consistently delivers strong returns."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">PS</div>
+                        <div><h4>Priya Sharma</h4><span>Investor</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card" data-animate="stagger-card">
+                    <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                    <div class="testimonial-stars">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                    <p>"Finding the perfect commercial space was seamless with Rao Group. Their market knowledge and negotiation skills saved us time and money."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">VS</div>
+                        <div><h4>Vikram Singh</h4><span>Business Owner</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="cta">
+        <div class="cta-bg"></div>
+        <div class="container">
+            <div class="cta-content" data-animate="scale">
+                <h2>Ready to Find Your<br>Perfect Property?</h2>
+                <p>Whether you're buying, selling, or investing, Rao Group is here to guide you every step of the way.</p>
+                <a href="#contact" class="btn btn-primary btn-large magnetic" data-strength="30">
+                    <span>Schedule a Consultation</span>
+                    <div class="btn-shimmer"></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-header" data-animate="header">
+                <span class="section-tag">Get In Touch</span>
+                <h2>Contact Us</h2>
+                <div class="section-line"></div>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info" data-animate="slide-right">
+                    <h3>Let's Start a Conversation</h3>
+                    <p>Have questions about a property or need expert real estate advice? Reach out and our team will get back to you promptly.</p>
+                    <div class="contact-details">
+                        <div class="contact-item" data-animate="stagger">
+                            <div class="contact-icon-box"><i class="fas fa-map-marker-alt"></i></div>
+                            <div>
+                                <h4>Visit Us</h4>
+                                <p>123 Business Avenue, Suite 500<br>City Center, State 10001</p>
+                            </div>
+                        </div>
+                        <div class="contact-item" data-animate="stagger">
+                            <div class="contact-icon-box"><i class="fas fa-phone-alt"></i></div>
+                            <div>
+                                <h4>Call Us</h4>
+                                <p>+1 (555) 123-4567<br>+1 (555) 987-6543</p>
+                            </div>
+                        </div>
+                        <div class="contact-item" data-animate="stagger">
+                            <div class="contact-icon-box"><i class="fas fa-envelope"></i></div>
+                            <div>
+                                <h4>Email Us</h4>
+                                <p>info@raogrouprealestate.com<br>sales@raogrouprealestate.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item" data-animate="stagger">
+                            <div class="contact-icon-box"><i class="fas fa-clock"></i></div>
+                            <div>
+                                <h4>Business Hours</h4>
+                                <p>Mon - Fri: 9:00 AM - 6:00 PM<br>Sat: 10:00 AM - 4:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-btn magnetic" data-strength="20"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-btn magnetic" data-strength="20"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-btn magnetic" data-strength="20"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-btn magnetic" data-strength="20"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-btn magnetic" data-strength="20"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form-box" data-animate="slide-left">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group floating">
+                                <input type="text" id="name" name="name" placeholder=" " required>
+                                <label for="name">Full Name</label>
+                                <div class="form-line"></div>
+                            </div>
+                            <div class="form-group floating">
+                                <input type="tel" id="phone" name="phone" placeholder=" ">
+                                <label for="phone">Phone Number</label>
+                                <div class="form-line"></div>
+                            </div>
+                        </div>
+                        <div class="form-group floating">
+                            <input type="email" id="email" name="email" placeholder=" " required>
+                            <label for="email">Email Address</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="interest" class="static-label">I'm Interested In</label>
+                            <select id="interest" name="interest">
+                                <option value="">Select an option</option>
+                                <option value="buying">Buying a Property</option>
+                                <option value="selling">Selling a Property</option>
+                                <option value="renting">Renting a Property</option>
+                                <option value="investing">Investment Advisory</option>
+                                <option value="commercial">Commercial Real Estate</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group floating">
+                            <textarea id="message" name="message" rows="4" placeholder=" " required></textarea>
+                            <label for="message">Your Message</label>
+                            <div class="form-line"></div>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full magnetic" data-strength="15">
+                            <span>Send Message</span>
+                            <i class="fas fa-arrow-right btn-arrow"></i>
+                            <div class="btn-shimmer"></div>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <img src="rao_group_logo_shadow.png" alt="Rao Group" class="footer-logo">
+                    <p>Your trusted partner in premium real estate. Building dreams, delivering value, and creating lasting legacies since 2009.</p>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#properties">Properties</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#services">Residential Sales</a></li>
+                        <li><a href="#services">Commercial Real Estate</a></li>
+                        <li><a href="#services">Property Management</a></li>
+                        <li><a href="#services">Investment Advisory</a></li>
+                        <li><a href="#services">Project Development</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4>Stay Updated</h4>
+                    <p>Subscribe for the latest listings and market insights.</p>
+                    <form class="newsletter-form" id="newsletter-form">
+                        <input type="email" placeholder="Your email address" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Rao Group Real Estate. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
